@@ -4,7 +4,8 @@ public void setup() {
 
 public void draw() {   
     background(255);
-    stroke(0.59 * 255, 0.29 * 255, 0);   
+    stroke(0.59 * 255, 0.29 * 255, 0);
+    fill(0.59 * 255, 0.29 * 255, 0);
     strokeWeight(5);
     line(250, 480, 250, 380);   
     drawBranches(250, 380, 80);
@@ -32,12 +33,12 @@ public void drawBranches(float x, float y, float len) {
 
 public void drawFlower(float x, float y, float size) {
     if (size < 1) return;
-    push();
     stroke(255 - size * 10, 192, 203);
     fill(255 - size * 10, 192, 203);
     for (int i = 0; i <= 12; i++) {
         ellipse(x + cos(i * PI / 6) * size, y + sin(i * PI / 6) * size, size - 1, size - 1);
     }
-    pop();
     drawFlower(x, y, size / 2);
+    stroke(0.59 * 255, 0.29 * 255, 0);
+    fill(0.59 * 255, 0.29 * 255, 0);
 }
